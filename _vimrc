@@ -1,142 +1,16 @@
-" Activate Addons Management
-" taken from: http://vorax-ide.blogspot.com/2010/10/keep-your-vim-updated-with-vam.html
-" let g:vim_script_manager = { 'known_repos_activation_policy' : 'autoload', 'auto_install' : 1 }
-let g:vim_addon_manager = { 'known_repos_activation_policy' : 'autoload', 'auto_install' : 1 }
+set nocompatible
+filetype off
 
-func ActivateMyAddons()
-  let addons_base = substitute(expand('$HOME') . '/.vim/plugins', '\\\\\|\\', '/', 'g')
-  " check if addons_base folder is there
-  if finddir(addons_base, '') == ''
-    call mkdir(addons_base, '') 
-  endif
-  let addons_manager = addons_base . '/vim-addon-manager'
-  exe 'set runtimepath+=' . escape(addons_manager, ' ')
-  if finddir(addons_manager) == ''
-    " The addons manager is not installed. Install it now!
-    exe 'cd ' . addons_base
-    exe '!git clone git://github.com/MarcWeber/vim-addon-manager.git'
-  endif
-  call vam#ActivateAddons(['The_NERD_Commenter',
-                              \  'syntastic2',
-                              \  'surround',
-                              \  'SuperTab_continued.', 
-                              \  'repeat', 
-                              \  'Align294',
-                              \  'SQLUtilities_-_SQL_utilities_-_Formatting_generate',
-                              \  'taglist',
-                              \  'L9',
-                              \  'The_NERD_tree',
-                              \  'genutils',
-                              \  'bufexplorer.zip',
-                              \  'matchit.zip',
-                              \  'Command-T',
-                              \  'minibufexpl.vim_-_Elegant_buffer_explorer',
-							  \  'FuzzyFinder',
-                              \  'tcalc',
-                              \  'arpeggio',
-                              \  'ack',
-                              \  'xptemplate',
-                              \  'vim-haxe',
-                              \  'LaTeX-Suite_aka_Vim-LaTeX',
-                              \  'html_improved_indentation',
-                              \  'desert',
-                              \  'desert256',
-                              \  'Wombat',
-                              \  'wombat256',
-							  \  'xoria256',
-                              \  'vcscommand',
-                              \  'vcsnursery',
-                              \  'filetype',
-                              \  'EasyGrep',
-                              \  'OmniCppComplete',
-                              \  'cppcomplete',
-                              \  'cppgetset',
-	              		      \  'project.tar.gz',
-			 			      \  'snipmate',
-                              \  'snipmate-snippets',
-							  \  'cscope_macros',
-							  \  'indexer.tar.gz_',
-							  \  'AutoComplPop',
-                              \  'word_complete',
-                              \  'vim-addon-scala',
-                              \  'cmake599',
-                              \  'cmake600',
-                              \  'DoxyGen_Syntax',
-                              \  'DoxygenToolkit',
-                              \  'ruby-macros',
-                              \  'vim-ruby',
-                              \  'Ruby_Snippets',
-                              \  'rails'])
-endfunc
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-" one plugin causes freezing in C++ editing
-"call vam#ActivateAddons(['The_NERD_Commenter',
-"                             \  'syntastic2',
-"                             \  'surround', 
-"                             \  'repeat', 
-"                             \  'supertab',
-"                             \  'Align294',
-"                      \  'google2636',
-"                     \  'SQLUtilities_-_SQL_utilities_-_Formatting_generate',
-"                   \  'taglist',
-"                   \  'L9',
-"                             \  'The_NERD_tree',
-  "                            \  'genutils',
-   "                           \  'bufexplorer.zip',
-    "                          \  'matchit.zip',
-     "                         \  'Command-T',
-      "                        \  'minibufexpl.vim_-_Elegant_buffer_explorer',
-	"						  \  'FuzzyFinder',
-     "                         \  'tcalc',
-      "                        \  'arpeggio',
-       "                       \  'ack',
-                           "   \  'xptemplate',
-                          "    \  'vim-haxe',
-                         "     \  'vim-latex',
-                        "      \  'html_improved_indentation',
-   "                           \  'desert',
-                       "       \  'desert256',
-                      "        \  'Wombat',
-                     "         \  'wombat256',
-					"		  \  'xoria256',
-                  "            \  'vcscommand',
-				""			  \  'Highlight_and_Mark_Lines',
-             "                 \  'vcsnursery',
-            "                  \  'filetype',
-           "                   \  'EasyGrep',
-          "                    \  'easytags',
-         "                     \  'XML_Completion',
-        "                      \  'closetag',
-       "                       \  'OmniCppComplete',
-      "                        \  'cppcomplete',
-      "
-     "                         \  'cppgetset',
-	"              		      \  'project.tar.gz',
-			 			  ""    \  'snipmate',
-                         "     \  'snippets',
-						"	  \  'showmarks',
-					"		  \  'cscope_macros',
-				"			  \  'indexer.tar.gz_',
-			"				  \  'AutoComplPop',
-         "                     \  'word_complete',
-        "                      \  'vim-addon-scala',
-       "                       \  'cmake599',
-      "                        \  'cmake600',
-     "                         \  'DoxyGen_Syntax',
-    "                          \  'DoxygenToolkit',
-   "                           \  'xmledit',
-  "                            \  'ruby-macros',
- "                             \  'vim-ruby',
-"                            \  'Ruby_Snippets',
-"                             \  'rails'])
-"endfunc
+Bundle 'gmarik/vundle'
+Bundle 'dsolstad/vim-wombat256i'
 
-call ActivateMyAddons()
+filetype plugin indent on
 
 " source: http://www.jonlee.ca/hacking-vim-the-ultimate-vimrc
 
-" We don't want vi compatibility.
-set nocompatible 
 set bs=2 "set backspace to be able to delete previous characters
 "Enable line numbering, taking up 6 spaces
 set number
@@ -150,8 +24,6 @@ set tabstop=4 "set tab character to 4 characters
 set expandtab "turn tabs into whitespace
 set shiftwidth=4 "indent width for autoindent
 
-filetype on
-filetype indent on "indent depends on filetype
 let g:tex_flavor = "latex"
 
 "use Groovy Syntay for gradle files  
@@ -173,7 +45,7 @@ set lazyredraw
 
 "Set color scheme
 set t_Co=256 "enable 256 colors in terminal
-colorscheme wombat
+colorscheme wombat256i
 syntax enable
 
 "Enable indent folding
