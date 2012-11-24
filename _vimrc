@@ -1,3 +1,8 @@
+"
+" https://github.com/gmarik/vundle
+" install: cd ~/.vim && git clone https://github.com/gmarik/vundle.git
+" 
+
 set nocompatible
 filetype off
 
@@ -6,6 +11,12 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'dsolstad/vim-wombat256i'
+Bundle 'Wombat'
+Bundle 'desert.vim'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'ervandew/supertab'
 
 filetype plugin indent on
 
@@ -45,9 +56,9 @@ set lazyredraw
 
 "Set color scheme
 set t_Co=256 "enable 256 colors in terminal
-colorscheme wombat256i
+"colorscheme desert
+colorscheme wombat
 syntax enable
-
 "Enable indent folding
 set foldenable
 set fdm=syntax
