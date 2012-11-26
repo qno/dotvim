@@ -1,6 +1,6 @@
 "
 " https://github.com/gmarik/vundle
-" install: cd ~/.vim && git clone https://github.com/gmarik/vundle.git
+" install: cd ~/.vim && git clone https://github.com/gmarik/vundle.git bundle/vundle
 " 
 
 set nocompatible
