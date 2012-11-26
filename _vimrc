@@ -17,6 +17,8 @@ Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'ervandew/supertab'
+Bundle 'UltiSnips'
+"http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/
 
 filetype plugin indent on
 
