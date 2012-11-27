@@ -15,12 +15,29 @@ Bundle 'Wombat'
 Bundle 'desert.vim'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'scrooloose/nerdtree'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'ervandew/supertab'
 Bundle 'UltiSnips'
 "http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/
+Bundle 'Rip-Rip/clang_complete'
 
 filetype plugin indent on
+
+"
+" clang_complete options (http://www.zwiener.org/vimautocomplete.html)
+"
+let g:clang_use_library = 1
+" Complete options (disable preview scratch window)
+"set completeopt = menu,menuone,longest
+" Limit popup menu height
+"set pumheight = 15
+" SuperTab option for context aware completion
+let g:SuperTabDefaultCompletionType = "context"
+" Disable auto popup, use <Tab> to autocomplete
+let g:clang_complete_auto = 0 
+" Show clang errors in the quickfix window
+let g:clang_complete_copen = 1
 
 " source: http://www.jonlee.ca/hacking-vim-the-ultimate-vimrc
 
@@ -80,40 +97,6 @@ set nocp
 set smartcase
 set incsearch
 set hlsearch
-
-" --- OmniCppComplete ---
-" http://vim.wikia.com/wiki/C%2B%2B_code_completion
-" -- optional --
-" auto close options when exiting insert mode
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menu,menuone,longest,preview
-" -- configs --
-let OmniCpp_MayCompleteDot = 1 " autocomplete with .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete with ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete with ::
-let OmniCpp_SelectFirstItem = 2 " select first item (but don't insert)
-let OmniCpp_NamespaceSearch = 2 " search namespaces in this and included files
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype (i.e. parameters) in popup window
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_ShowAccess = 1
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-
-" -- ctags --
-" map <ctrl>+F12 to generate ctags for current folder:
-map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
-" add current directory's generated tags file to available tags
-set tags+=./tags
-set tags+=~/.ctags/lib_cpp
-set tags+=~/.ctags/gl_usr_include
-set tags+=~/.ctags/opencv2_usr_local_include
-set tags+=~/.ctags/opencv_usr_local_include
-set tags+=~/.ctags/wx-2.8_usr_include
-set tags+=~/.ctags/bullet_usr_local_include
-set tags+=~/.ctags/glog_usr_local_include
-set tags+=~/.ctags/boost_usr_local_include
-set tags+=~/.ctags/osg-3.x_usr_local_include
-set tags+=~/.ctags/sdl_usr_include
-set tags+=~/.ctags/sfml_usr_include
 
 "Set line numbering to take up 5 spaces
 set numberwidth=5
