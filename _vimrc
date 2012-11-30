@@ -13,6 +13,7 @@ Bundle 'gmarik/vundle'
 Bundle 'dsolstad/vim-wombat256i'
 Bundle 'Wombat'
 Bundle 'desert.vim'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'wincent/Command-T'
@@ -29,6 +30,10 @@ Bundle 'AutoComplPop'
 Bundle 'taglist.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'inccomplete'
+Bundle 'golden-ratio'
+Bundle 'SyntaxComplete'
+Bundle 'STL-Syntax'
+"Bundle 'rdavison/clavim'
 
 filetype plugin indent on
 
@@ -83,9 +88,14 @@ set lazyredraw
 
 "Set color scheme
 set t_Co=256 "enable 256 colors in terminal
-"colorscheme desert
-colorscheme wombat
 syntax enable
+set background=dark
+"set background=light
+let g:solarized_termcolors=256
+colorscheme solarized
+"colorscheme desert
+"colorscheme wombat
+
 "Enable indent folding
 set foldenable
 set fdm=syntax
@@ -136,6 +146,14 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 highlight Pmenu ctermbg=238 gui=bold
 
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+
+if has("autocmd") && exists("+omnifunc")
+    autocmd Filetype *
+          \if &omnifunc == "" |
+        \setlocal omnifunc=syntaxcomplete#Complete |
+       \endif
+endif
+
 
 " gvim stuff
 if has('gui_running')
