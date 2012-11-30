@@ -154,6 +154,7 @@ if has("autocmd") && exists("+omnifunc")
        \endif
 endif
 
+let g:load_doxygen_syntax=1
 
 " gvim stuff
 if has('gui_running')
