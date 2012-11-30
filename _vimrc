@@ -14,10 +14,10 @@ Bundle 'dsolstad/vim-wombat256i'
 Bundle 'Wombat'
 Bundle 'desert.vim'
 Bundle 'L9'
-"Bundle 'FuzzyFinder'
-"Bundle 'jamis/fuzzyfinder_textmate'
+Bundle 'FuzzyFinder'
 Bundle 'wincent/Command-T'
 Bundle 'scrooloose/nerdtree'
+Bundle 'FindFile'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vadv/rubycomplete'
 "http://www.cuberick.com/2008/10/ruby-autocomplete-in-vim.html
@@ -25,6 +25,10 @@ Bundle 'ervandew/supertab'
 Bundle 'UltiSnips'
 "http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/
 Bundle 'Rip-Rip/clang_complete'
+Bundle 'AutoComplPop'
+Bundle 'taglist.vim'
+Bundle 'bufexplorer.zip'
+Bundle 'inccomplete'
 
 filetype plugin indent on
 
@@ -132,7 +136,6 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 highlight Pmenu ctermbg=238 gui=bold
 
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-"map <leader>t :FuzzyFinderTextMate<CR>
 
 " gvim stuff
 if has('gui_running')
