@@ -33,6 +33,9 @@ Bundle 'inccomplete'
 Bundle 'golden-ratio'
 Bundle 'SyntaxComplete'
 Bundle 'STL-Syntax'
+Bundle 'abudden/TagHighlight'
+Bundle 'autotags'
+Bundle 'chazy/cscope_maps'
 "Bundle 'rdavison/clavim'
 
 filetype plugin indent on
