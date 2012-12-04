@@ -36,7 +36,7 @@ Bundle 'STL-Syntax'
 Bundle 'abudden/TagHighlight'
 Bundle 'autotags'
 Bundle 'chazy/cscope_maps'
-"Bundle 'rdavison/clavim'
+Bundle 'rdavison/clavim'
 
 filetype plugin indent on
 
