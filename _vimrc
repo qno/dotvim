@@ -167,7 +167,8 @@ let g:load_doxygen_syntax=1
 if has('gui_running')
 "Set the font and size
 "set guifont=Lucida\ Console
-set guifont=Andale\ Mono\ 10
+"set guifont=Andale\ Mono\ 10
+set guifont=Inconsolata\ 12
 
 "Hide toolbar
 set guioptions-=T
