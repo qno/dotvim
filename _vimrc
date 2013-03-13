@@ -41,6 +41,7 @@ Bundle 'CCTree'
 Bundle 'surround.vim'
 Bundle 'chazy/cscope_maps'
 Bundle 'rdavison/clavim'
+Bundle 'mileszs/ack.vim'
 
 filetype plugin indent on
 
