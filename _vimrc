@@ -130,6 +130,9 @@ set numberwidth=5
 "Highlight current line
 set cursorline
 
+"Sets the c (change) command to display an $ at the end of change context
+set cpoptions+=$
+
 "Turn on spell checking with Deutsch, Neue Rechtschreibung
 set spell
 set spelllang=de_20
