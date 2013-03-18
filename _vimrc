@@ -28,17 +28,18 @@ Bundle 'UltiSnips'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'AutoComplPop'
 Bundle 'taglist.vim'
-Bundle 'fholgado/minibufexpl.vim'
+"Bundle 'fholgado/minibufexpl.vim'
 "Bundle 'project.vim'
 Bundle 'inccomplete'
 "Bundle 'golden-ratio'
 Bundle 'SyntaxComplete'
 Bundle 'STL-Syntax'
-Bundle 'abudden/TagHighlight'
+Bundle 'TagHighlight'
 Bundle 'basilgor/vim-autotags'
 Bundle 'Tagbar'
 Bundle 'CCTree'
 Bundle 'surround.vim'
+Bundle 'tpope/vim-fugitive'
 Bundle 'chazy/cscope_maps'
 Bundle 'rdavison/clavim'
 Bundle 'mileszs/ack.vim'
@@ -91,8 +92,52 @@ set smartcase
 
 "Informative status line
 "Warning: slows down reaction on curser movement (on Thinkpad X32)
-set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [%l/%L\ (%p%%)]
+"set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [%l/%L\ (%p%%)]
+set stl=%f\ %m\ %r%{fugitive#statusline()}\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
 set lazyredraw
+
+" tell VIM to always put a status line in, even if there is only one window
+set laststatus=2
+
+" Don't show the current command int he lower right corner.  In OSX, if this
+" is set and lazyredraw is set then it's slow as molasses, so we unset this
+set showcmd
+
+" Show the current mode
+set showmode 
+
+" Allow the cursor to go in to "invalid" places
+set virtualedit=all
+
+" Make the command-line completion better
+set wildmenu
+
+" When completing by tag, show the whole tag, not just the function name
+set showfulltag
+
+" get rid of the silly characters in separators
+set fillchars = ""
+
+" Add ignorance of whitespace to diff
+set diffopt+=iwhite
+
+" Allow the cursor to go in to "invalid" places
+set virtualedit=all
+
+" When completing by tag, show the whole tag, not just the function name
+set showfulltag
+
+" Make command line two lines high
+set ch=2
+
+" set visual bell -- i hate that damned beeping
+set vb
+
+" Allow backspacing over indent, eol, and the start of an insert
+set backspace=2
+
+" set the search scan to wrap lines
+set wrapscan
 
 "Set color scheme
 set t_Co=256 "enable 256 colors in terminal
@@ -109,6 +154,9 @@ colorscheme solarized
 set foldenable
 set fdm=syntax
 
+" These commands open folds
+set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
+ 
 "Hide buffer when not in window (to prevent relogin with FTP edit)
 set bufhidden=hide
 
@@ -130,8 +178,9 @@ set numberwidth=5
 "Highlight current line
 set cursorline
 
-"Sets the c (change) command to display an $ at the end of change context
-set cpoptions+=$
+" Make the 'cw' and like commands put a $ at the end instead of just deleting
+" the text and replacing it
+set cpoptions=ces$
 
 "Turn on spell checking with Deutsch, Neue Rechtschreibung
 set spell
