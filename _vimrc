@@ -109,7 +109,7 @@ set fillchars = ""
 set diffopt+=iwhite
 
 " Allow the cursor to go in to "invalid" places
-set virtualedit=all
+"set virtualedit=all
 
 " When completing by tag, show the whole tag, not just the function name
 set showfulltag
@@ -216,6 +216,9 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
 let g:load_doxygen_syntax=1
+
+" don't process .lvimrc commands, setting in sandbox 
+let g:localvimrc_sandbox=0
 
 " gvim stuff
 if has('gui_running')
