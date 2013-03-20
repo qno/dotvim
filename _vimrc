@@ -25,41 +25,28 @@ Bundle 'vadv/rubycomplete'
 Bundle 'ervandew/supertab'
 Bundle 'UltiSnips'
 "http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/
-Bundle 'Rip-Rip/clang_complete'
 Bundle 'AutoComplPop'
 Bundle 'taglist.vim'
 "Bundle 'fholgado/minibufexpl.vim'
-"Bundle 'project.vim'
 Bundle 'inccomplete'
-"Bundle 'golden-ratio'
 Bundle 'SyntaxComplete'
 Bundle 'STL-Syntax'
 Bundle 'TagHighlight'
+Bundle 'vcscommand.vim'
 Bundle 'basilgor/vim-autotags'
 Bundle 'Tagbar'
 Bundle 'CCTree'
 Bundle 'surround.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'chazy/cscope_maps'
 Bundle 'rdavison/clavim'
 Bundle 'mileszs/ack.vim'
+Bundle 'embear/vim-localvimrc'
+
+"vim is not yet ready :-(
+"Bundle 'Valloric/YouompleteMe'
+Bundle 'OmniCppComplete'
 
 filetype plugin indent on
-
-"
-" clang_complete options (http://www.zwiener.org/vimautocomplete.html)
-"
-let g:clang_use_library = 1
-" Complete options (disable preview scratch window)
-"set completeopt = menu,menuone,longest
-" Limit popup menu height
-"set pumheight = 15
-" SuperTab option for context aware completion
-let g:SuperTabDefaultCompletionType = "context"
-" Disable auto popup, use <Tab> to autocomplete
-let g:clang_complete_auto = 0 
-" Show clang errors in the quickfix window
-let g:clang_complete_copen = 1
 
 " source: http://www.jonlee.ca/hacking-vim-the-ultimate-vimrc
 
@@ -107,7 +94,7 @@ set showcmd
 set showmode 
 
 " Allow the cursor to go in to "invalid" places
-set virtualedit=all
+"set virtualedit=all
 
 " Make the command-line completion better
 set wildmenu
@@ -206,7 +193,8 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
 
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 
 if has("autocmd") && exists("+omnifunc")
     autocmd Filetype *
@@ -214,6 +202,18 @@ if has("autocmd") && exists("+omnifunc")
         \setlocal omnifunc=syntaxcomplete#Complete |
        \endif
 endif
+
+" OmniCppComplete setup
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_MayCompleteDot = 1
+let OmniCpp_MayCompleteArrow = 1
+let OmniCpp_MayCompleteScope = 1
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
 
 let g:load_doxygen_syntax=1
 
