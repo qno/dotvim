@@ -23,7 +23,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'vadv/rubycomplete'
 "http://www.cuberick.com/2008/10/ruby-autocomplete-in-vim.html
 Bundle 'ervandew/supertab'
-Bundle 'UltiSnips'
+Bundle 'SirVer/ultisnips'
 "http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/
 Bundle 'AutoComplPop'
 Bundle 'majutsushi/tagbar'
