@@ -26,8 +26,7 @@ Bundle 'ervandew/supertab'
 Bundle 'UltiSnips'
 "http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/
 Bundle 'AutoComplPop'
-Bundle 'taglist.vim'
-"Bundle 'fholgado/minibufexpl.vim'
+Bundle 'majutsushi/tagbar'
 Bundle 'inccomplete'
 Bundle 'SyntaxComplete'
 Bundle 'STL-Syntax'
@@ -71,6 +70,8 @@ au BufNewFile,BufRead *.gradle setf groovy
 "Shortcut to auto indent entire file
 nmap <F11> 1G=G
 imap <F11> <ESC>1G=Ga
+
+nmap <F8> :TagbarToggle<CR>
 
 "Turn on incremental search with ignore case (except explicit caps)
 set incsearch
