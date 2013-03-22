@@ -14,36 +14,28 @@ Bundle 'dsolstad/vim-wombat256i'
 Bundle 'Wombat'
 Bundle 'desert.vim'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+Bundle 'tomtom/tcomment_vim'
 Bundle 'wincent/Command-T'
 Bundle 'scrooloose/nerdtree'
-Bundle 'FindFile'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vadv/rubycomplete'
 "http://www.cuberick.com/2008/10/ruby-autocomplete-in-vim.html
-Bundle 'ervandew/supertab'
 Bundle 'SirVer/ultisnips'
 "http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/
-Bundle 'AutoComplPop'
 Bundle 'majutsushi/tagbar'
 Bundle 'inccomplete'
-Bundle 'SyntaxComplete'
-Bundle 'STL-Syntax'
-Bundle 'TagHighlight'
+" Bundle 'TagHighlight'
 Bundle 'vcscommand.vim'
 Bundle 'basilgor/vim-autotags'
 Bundle 'Tagbar'
-Bundle 'CCTree'
 Bundle 'surround.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'rdavison/clavim'
 Bundle 'mileszs/ack.vim'
 Bundle 'embear/vim-localvimrc'
-
-"vim is not yet ready :-(
-"Bundle 'Valloric/YouompleteMe'
-Bundle 'OmniCppComplete'
+" Bundle 'scrooloose/syntastic'
+Bundle 'Valloric/YouCompleteMe'
+" Bundle 'OmniCppComplete'
 
 filetype plugin indent on
 
@@ -194,27 +186,27 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
 
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+" let g:SuperTabDefaultCompletionType = "context"
+" let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 
-if has("autocmd") && exists("+omnifunc")
-    autocmd Filetype *
-          \if &omnifunc == "" |
-        \setlocal omnifunc=syntaxcomplete#Complete |
-       \endif
-endif
+" if has("autocmd") && exists("+omnifunc")
+"     autocmd Filetype *
+"           \if &omnifunc == "" |
+"         \setlocal omnifunc=syntaxcomplete#Complete |
+"        \endif
+" endif
 
 " OmniCppComplete setup
-let OmniCpp_NamespaceSearch = 1
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_ShowAccess = 1
-let OmniCpp_MayCompleteDot = 1
-let OmniCpp_MayCompleteArrow = 1
-let OmniCpp_MayCompleteScope = 1
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-" automatically open and close the popup menu / preview window
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menuone,menu,longest,preview
+" let OmniCpp_NamespaceSearch = 1
+" let OmniCpp_GlobalScopeSearch = 1
+" let OmniCpp_ShowAccess = 1
+" let OmniCpp_MayCompleteDot = 1
+" let OmniCpp_MayCompleteArrow = 1
+" let OmniCpp_MayCompleteScope = 1
+" let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" " automatically open and close the popup menu / preview window
+" au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+" set completeopt=menuone,menu,longest,preview
 
 let g:load_doxygen_syntax=1
 
