@@ -92,9 +92,6 @@ set showmode
 " Make the command-line completion better
 set wildmenu
 
-" When completing by tag, show the whole tag, not just the function name
-set showfulltag
-
 " get rid of the silly characters in separators
 set fillchars = ""
 
