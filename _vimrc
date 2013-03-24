@@ -10,9 +10,9 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'dsolstad/vim-wombat256i'
-Bundle 'Wombat'
-Bundle 'desert.vim'
+" Bundle 'dsolstad/vim-wombat256i'
+" Bundle 'Wombat'
+" Bundle 'desert.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'wincent/Command-T'
@@ -27,15 +27,15 @@ Bundle 'inccomplete'
 " Bundle 'TagHighlight'
 Bundle 'vcscommand.vim'
 Bundle 'basilgor/vim-autotags'
-Bundle 'Tagbar'
 Bundle 'surround.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'rdavison/clavim'
 Bundle 'mileszs/ack.vim'
 Bundle 'embear/vim-localvimrc'
-" Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
-" Bundle 'OmniCppComplete'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
 
 filetype plugin indent on
 
@@ -141,14 +141,9 @@ set bufhidden=hide
 set scrolloff=3
 
 set cindent
-"set cinoptions
+" set cinoptions
 set enc=utf-8
 set fenc=utf-8
-
-set nocp
-set smartcase
-set incsearch
-set hlsearch
 
 "Set line numbering to take up 5 spaces
 set numberwidth=5
@@ -157,7 +152,8 @@ set cursorline
 
 " Make the 'cw' and like commands put a $ at the end instead of just deleting
 " the text and replacing it
-set cpoptions=ces$
+" This wont work with YouCompleteMe !!!
+"set cpoptions=ces$
 
 "Turn on spell checking with Deutsch, Neue Rechtschreibung
 set spell
@@ -209,6 +205,8 @@ let g:load_doxygen_syntax=1
 
 " don't process .lvimrc commands, setting in sandbox 
 let g:localvimrc_sandbox=0
+
+let g:CommandTMaxFiles=20000
 
 " gvim stuff
 if has('gui_running')
