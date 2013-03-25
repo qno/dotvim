@@ -82,9 +82,6 @@ set smartcase
 
  set lazyredraw
 
-" Allow the cursor to go in to "invalid" places
-"set virtualedit=all
-
 " Make the command-line completion better
 set wildmenu
 
@@ -93,9 +90,6 @@ set fillchars = ""
 
 " Add ignorance of whitespace to diff
 set diffopt+=iwhite
-
-" Allow the cursor to go in to "invalid" places
-"set virtualedit=all
 
 " When completing by tag, show the whole tag, not just the function name
 set showfulltag
@@ -181,18 +175,6 @@ highlight Pmenu ctermbg=238 gui=bold
 "         \setlocal omnifunc=syntaxcomplete#Complete |
 "        \endif
 " endif
-
-" OmniCppComplete setup
-" let OmniCpp_NamespaceSearch = 1
-" let OmniCpp_GlobalScopeSearch = 1
-" let OmniCpp_ShowAccess = 1
-" let OmniCpp_MayCompleteDot = 1
-" let OmniCpp_MayCompleteArrow = 1
-" let OmniCpp_MayCompleteScope = 1
-" let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-" " automatically open and close the popup menu / preview window
-" au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-" set completeopt=menuone,menu,longest,preview
 
 let g:load_doxygen_syntax=1
 
