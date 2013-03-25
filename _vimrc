@@ -10,12 +10,10 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-" Bundle 'dsolstad/vim-wombat256i'
-" Bundle 'Wombat'
-" Bundle 'desert.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'wincent/Command-T'
+Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vadv/rubycomplete'
@@ -28,7 +26,6 @@ Bundle 'inccomplete'
 Bundle 'vcscommand.vim'
 Bundle 'basilgor/vim-autotags'
 Bundle 'surround.vim'
-Bundle 'tpope/vim-fugitive'
 Bundle 'rdavison/clavim'
 Bundle 'mileszs/ack.vim'
 Bundle 'embear/vim-localvimrc'
@@ -36,6 +33,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'tpope/vim-fugitive'
 
 filetype plugin indent on
 
@@ -60,31 +59,28 @@ let g:tex_flavor = "latex"
 au BufNewFile,BufRead *.gradle setf groovy
 
 "Shortcut to auto indent entire file
-nmap <F11> 1G=G
-imap <F11> <ESC>1G=Ga
+nmap <F10> 1G=G
+imap <F10> <ESC>1G=Ga
 
 nmap <F8> :TagbarToggle<CR>
+nmap <F7> :NERDTreeToggle<CR>
 
 "Turn on incremental search with ignore case (except explicit caps)
 set incsearch
 set ignorecase
 set smartcase
 
-"Informative status line
-"Warning: slows down reaction on curser movement (on Thinkpad X32)
-"set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [%l/%L\ (%p%%)]
-set stl=%f\ %m\ %r%{fugitive#statusline()}\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
-set lazyredraw
-
 " tell VIM to always put a status line in, even if there is only one window
-set laststatus=2
+ set laststatus=2
 
 " Don't show the current command int he lower right corner.  In OSX, if this
 " is set and lazyredraw is set then it's slow as molasses, so we unset this
-set showcmd
+ set showcmd
 
 " Show the current mode
-set showmode 
+ set showmode 
+
+ set lazyredraw
 
 " Allow the cursor to go in to "invalid" places
 "set virtualedit=all
@@ -124,8 +120,6 @@ set background=dark
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
-"colorscheme desert
-"colorscheme wombat
 
 "Enable indent folding
 set foldenable
@@ -141,7 +135,6 @@ set bufhidden=hide
 set scrolloff=3
 
 set cindent
-" set cinoptions
 set enc=utf-8
 set fenc=utf-8
 
