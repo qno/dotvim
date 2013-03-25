@@ -198,8 +198,15 @@ let g:load_doxygen_syntax=1
 
 " don't process .lvimrc commands, setting in sandbox 
 let g:localvimrc_sandbox=0
+" don't ask for loading a .lvimrc file
+let g:localvimrc_ask=0
 
 let g:CommandTMaxFiles=20000
+
+let g:ycm_complete_in_comments_and_strings=1
+let g:ycm_add_preview_to_completeopt=1
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_confirm_extra_conf=0
 
 " gvim stuff
 if has('gui_running')
