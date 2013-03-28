@@ -21,12 +21,12 @@ Bundle 'vadv/rubycomplete'
 Bundle 'SirVer/ultisnips'
 "http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/
 Bundle 'majutsushi/tagbar'
-Bundle 'inccomplete'
-" Bundle 'TagHighlight'
-Bundle 'vcscommand.vim'
+Bundle 'xaizek/vim-inccomplete'
+Bundle 'TagHighlight'
+Bundle 'harleypig/vcscommand.vim'
 Bundle 'basilgor/vim-autotags'
-Bundle 'surround.vim'
-Bundle 'rdavison/clavim'
+Bundle 'tpope/vim-surround'
+" Bundle 'rdavison/clavim'
 Bundle 'mileszs/ack.vim'
 Bundle 'embear/vim-localvimrc'
 Bundle 'scrooloose/syntastic'
@@ -36,7 +36,9 @@ Bundle 'FuzzyFinder'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Shougo/neocomplcache'
-
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'tpope/vim-repeat'
+Bundle 'Raimondi/delimitMate'
 
 filetype plugin indent on
 
@@ -187,12 +189,16 @@ let g:localvimrc_ask=0
 
 let g:CommandTMaxFiles=20000
 
+" CtrlP scan unlimited files 
+let g:ctrlp_max_files=0
+let g:ctrlp_clear_cache_on_exit=0
+
 let g:ycm_complete_in_comments_and_strings=1
 let g:ycm_add_preview_to_completeopt=1
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_confirm_extra_conf=0
 
-let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_enable_at_startup=0
 
 
 " gvim stuff
