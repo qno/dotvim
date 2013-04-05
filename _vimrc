@@ -12,7 +12,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'wincent/Command-T'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-ruby/vim-ruby'
