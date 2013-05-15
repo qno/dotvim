@@ -70,6 +70,7 @@ nmap <F7> :NERDTreeToggle<CR>
 
 "Turn on incremental search with ignore case (except explicit caps)
 set incsearch
+set hlsearch
 set ignorecase
 set smartcase
 
@@ -131,6 +132,11 @@ set bufhidden=hide
 "Have 3 lines of offset (or buffer) when scrolling
 set scrolloff=3
 
+set textwidth=140
+
+" Automatically read a file that has changed on disk
+set autoread
+ 
 set cindent
 set enc=utf-8
 set fenc=utf-8
@@ -191,6 +197,8 @@ let g:CommandTMaxFiles=20000
 " CtrlP scan unlimited files 
 let g:ctrlp_max_files=0
 let g:ctrlp_clear_cache_on_exit=0
+" CtrlP doesn't change directory
+let g:ctrlp_working_path_mode = ''
 
 let g:ycm_complete_in_comments_and_strings=1
 let g:ycm_add_preview_to_completeopt=1
@@ -199,6 +207,10 @@ let g:ycm_confirm_extra_conf=0
 
 let g:neocomplcache_enable_at_startup=0
 
+" YouCompleteMe shortcuts
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR> 
+nnoremap <leader>jdc :YcmCompleter GoToDeclaration<CR> 
+nnoremap <leader>jdf :YcmCompleter GoToDefinition<CR> 
 
 " gvim stuff
 if has('gui_running')
