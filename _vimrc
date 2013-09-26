@@ -23,7 +23,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'xaizek/vim-inccomplete'
 Bundle 'TagHighlight'
 Bundle 'harleypig/vcscommand.vim'
-Bundle 'basilgor/vim-autotags'
+" Bundle 'basilgor/vim-autotags'
 Bundle 'tpope/vim-surround'
 " Bundle 'rdavison/clavim'
 Bundle 'mileszs/ack.vim'
@@ -40,6 +40,8 @@ Bundle 'tpope/vim-repeat'
 Bundle 'Raimondi/delimitMate'
 
 filetype plugin indent on
+
+let mapleader = ","
 
 " source: http://www.jonlee.ca/hacking-vim-the-ultimate-vimrc
 
@@ -83,6 +85,8 @@ set smartcase
 
 " Show the current mode
  set showmode 
+
+ set showcmd
 
  set lazyredraw
 
@@ -191,8 +195,6 @@ let g:load_doxygen_syntax=1
 let g:localvimrc_sandbox=0
 " don't ask for loading a .lvimrc file
 let g:localvimrc_ask=0
-
-let g:CommandTMaxFiles=20000
 
 " CtrlP scan unlimited files 
 let g:ctrlp_max_files=0
