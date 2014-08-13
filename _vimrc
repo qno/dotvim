@@ -14,8 +14,9 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'vadv/rubycomplete'
+"""Bundle 'vim-ruby/vim-ruby'  --> now in Ubuntu repository!
+"""Bundle 'vadv/rubycomplete'
+Bundle 'rubycomplete.vim'
 "http://www.cuberick.com/2008/10/ruby-autocomplete-in-vim.html
 Bundle 'SirVer/ultisnips'
 "http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/
@@ -29,7 +30,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'mileszs/ack.vim'
 Bundle 'embear/vim-localvimrc'
 Bundle 'scrooloose/syntastic'
-Bundle 'Valloric/YouCompleteMe'
+""" Bundle 'Valloric/YouCompleteMe'  --> now in Ubuntu repository!
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'Lokaltog/vim-powerline'
@@ -156,10 +157,11 @@ set cursorline
 "set cpoptions=ces$
 
 "Turn on spell checking with Deutsch, Neue Rechtschreibung
-set spell
-set spelllang=de_20
-set spelllang=en_us
-set spellsuggest=9 "show only 9 suggestions for misspelled words
+" commented out because error on loading
+"set spell
+"set spelllang=de_20
+"set spelllang=en_us
+"set spellsuggest=9 "show only 9 suggestions for misspelled words
 
 "vim-latex
 " IMPORTANT: grep will sometimes skip displaying the file name if you
